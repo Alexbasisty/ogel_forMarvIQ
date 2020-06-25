@@ -6,6 +6,8 @@ ul {
         border-bottom: 1px solid $color-primary;
 
         div {
+            display: flex;
+            justify-content: space-between;
             padding: $main-spacing / 2;
         }
     }
