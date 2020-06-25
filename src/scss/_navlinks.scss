@@ -1,0 +1,14 @@
+.navlinks {
+    display: grid;
+    font-size: 300%;
+    color: #111;
+
+    a {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            color: darkgrey;
+        }
+    }
+}
