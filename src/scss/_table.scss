@@ -1,5 +1,6 @@
 table {
     width: 100%;
+    margin-bottom: 100px;
 
     thead {
         border-bottom: 2px solid darken($color-primary, 10%);
@@ -14,5 +15,6 @@ table {
     th,
     td {
         padding: $main-spacing / 2;
+        text-align: center;
     }
 }

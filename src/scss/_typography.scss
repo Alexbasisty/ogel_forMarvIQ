@@ -12,11 +12,14 @@ strong {
 
 h1 {
     font-size: 1.5rem;
+    text-align: center;
+    margin: $main-spacing;
 }
 
 h2 {
     font-size: 1.2rem;
-    margin-bottom: $main-spacing / 2;
+    text-align: center;
+    margin: $main-spacing / 2;
 }
 
 p {

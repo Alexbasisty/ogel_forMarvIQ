@@ -16,6 +16,7 @@ const MobileVersion = props => {
 
     return (
         <>
+        <div className="container">
             <table>
                 <thead>
                     <tr>
@@ -45,43 +46,9 @@ const MobileVersion = props => {
                     ))}
                 </tbody>
             </table>
+            </div>
         </>
     )
-
-
-    // return (
-    //     <>
-    //         <h1>The machine 24 hours statuses</h1>
-    //         <ul>
-    //             {data.map((machine, index) => (
-    //                 <li key={index}>
-    //                     <h2>{machine.MACHINE}, date: {machine.DATETIME_FROM.slice(0, 10)}</h2>
-    //                     <div>
-    //                         <strong>The total net production for the machine: </strong> {totalNetProduction(machine)}
-    //                     </div>
-    //                     <div>
-    //                         <strong>The percentage of scrap vs gross production: </strong>
-    //                         {machine.SCRAP_PERCENTAGE.toFixed(7) * 100}%
-    //                     </div>
-    //                     <div>
-    //                         <strong>The percentage of downtime for a machine: </strong>
-    //                         {machine.DOWNTIME_PERCENTAGE.toFixed(7) * 100}%
-    //                     </div>
-    //                     <div>
-    //                         <strong>A list of the net production for every hour: </strong>
-    //                          {netProductionHourly(machine).map((hour, index) => (
-    //                                 <div key={index}>
-    //                                     <strong>{hour}: </strong>
-    //                                     {Math.floor(machine[hour] - machine[hour] * machine.SCRAP_PERCENTAGE)}
-    //                                 </div>
-    //                             ))
-    //                          }
-    //                     </div>                        
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     </>
-    // )
 }
 
 export default MobileVersion;
