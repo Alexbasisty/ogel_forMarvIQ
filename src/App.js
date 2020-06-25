@@ -1,5 +1,7 @@
 import React from 'react';
+
 import MachineStatus from './Machine_stat';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -7,6 +9,7 @@ function App() {
     <>
     <h1>Hello!</h1>
     <MachineStatus />
+    <Footer />
     </>
   );
 }
