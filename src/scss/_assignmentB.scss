@@ -1,0 +1,46 @@
+.machine-status {
+    display: block;
+    width: 70vw;
+    margin: 50px auto;
+    color: white;
+    
+    div {
+        width: 100%;
+        height: 20vh;
+
+        h2 {
+            line-height: 200px;
+            vertical-align: middle;
+        }
+
+        span {
+            display: block;
+            text-align: center;
+            font-size: 20px;
+        }
+    }
+}
+
+.good{
+    background-color: $color-good;
+
+    span {
+        color: darken($color: $color-good, $amount: 10%)
+    }
+}
+
+.warning {
+    background-color: $color-warning;
+
+    span {
+        color: darken($color: $color-warning, $amount: 20%)
+    }
+}
+
+.fatal {
+    background-color: $color-fatal;
+
+    span {
+        color: darken($color: $color-fatal, $amount: 20%)
+    }
+}
