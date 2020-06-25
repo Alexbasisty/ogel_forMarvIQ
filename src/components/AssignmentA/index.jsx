@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import MobileVersion from './MobileVersion';
+import DesktopVersion from './DesktopVersion';
 
 class AssignmentA extends Component {
     state = {
@@ -21,7 +22,13 @@ class AssignmentA extends Component {
     }
 
     render() {
-        return <MobileVersion data={this.state.data} />
+        // return <MobileVersion data={this.state.data} />
+        return (
+            <>
+                <h1>The machine 24 hours statuses</h1>
+                <DesktopVersion data={this.state.data} />   
+            </>
+        )
     }
 }
 
