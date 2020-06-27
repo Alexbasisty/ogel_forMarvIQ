@@ -18,7 +18,6 @@ const MobileVersion = props => {
 
     return (
         <>
-            <h1>The machine 24 hours statuses</h1>
             <ul>
                 {data.map((machine, index) => (
                     <li key={index}>
