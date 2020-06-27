@@ -1,59 +1,69 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 
 import MobileVersion from './MobileVersion';
 import DesktopVersion from './DesktopVersion';
 
-class AssignmentA extends Component {
-    state = {
+const AssignmentA = () => {
+    const [state, setState] = useState({
         data: [],
-        error: '',
-        isDesktop: true,        
-    };
+        error: '',    
+    });
 
-    checkIsDesktop(event) {
-            const width = event.currentTarget.innerWidth;
+    // const checkIsDesktop = (event) => {
+    //         const width = event.currentTarget.innerWidth;
 
-            if (width > 800) {
-                this.setState({
-                    isDesktop: true
-                })
-            } else {
-                this.setState({
-                    isDesktop: false
-                })
-            }
-    }
+    //         if (width > 800) {
+    //             setState(prevState => {
+    //                 return {
+    //                     ...prevState,
+    //                     isDesktop: true
+    //                 }
+    //             })
+    //         } else {
+    //             setState(prevState => {
+    //                 return {
+    //                     ...prevState,
+    //                     isDesktop: false
+    //                 }
+    //             })
+    //         }
+    // }
 
-    componentDidMount() {
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 800px)'
+    });
+
+    useEffect(() => {
         const url = `https://www.marviq.com/assessment/index.php?page=a&from=2018-01-07%2000:00:00`;
         fetch(url)
             .then(resp => resp.json())
-            .then(data => this.setState({
-                data
+            .then(data => setState(prevState => {
+                return {
+                    ...prevState,
+                    data: data,
+                }
             }))
-            .catch(error => this.setState({error}));
+            .catch(error => setState(prevState => {
+                return {
+                    ...prevState,
+                    error: error
+                }
+            }));
+    })
 
-            window.addEventListener('resize', (event) => this.checkIsDesktop(event))
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.checkIsDesktop)
-    }
-
-    render() {
         return (
             <>
                 <h1>The machine 24 hours statuses</h1>
-                {this.state.isDesktop 
+                {isDesktop 
                 ? 
-                <DesktopVersion data={this.state.data} />
+                <DesktopVersion data={state.data} />
                 :
-                <MobileVersion data={this.state.data} /> 
+                <MobileVersion data={state.data} /> 
             }   
             </>
         )
-    }
 }
 
 const TaskALink = () => (
