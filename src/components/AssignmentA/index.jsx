@@ -6,30 +6,11 @@ import MobileVersion from './MobileVersion';
 import DesktopVersion from './DesktopVersion';
 
 const AssignmentA = () => {
+    
     const [state, setState] = useState({
         data: [],
         error: '',    
     });
-
-    // const checkIsDesktop = (event) => {
-    //         const width = event.currentTarget.innerWidth;
-
-    //         if (width > 800) {
-    //             setState(prevState => {
-    //                 return {
-    //                     ...prevState,
-    //                     isDesktop: true
-    //                 }
-    //             })
-    //         } else {
-    //             setState(prevState => {
-    //                 return {
-    //                     ...prevState,
-    //                     isDesktop: false
-    //                 }
-    //             })
-    //         }
-    // }
 
     const isDesktop = useMediaQuery({
         query: '(min-width: 800px)'
