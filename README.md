@@ -5,6 +5,10 @@
 Made with `npx create-react-app`, 
 `npm start` to display app in your browser
 
+### bug fixer
+
+fixed a bug with responsivity of a AssignmentA component, for that created a new branch, than made a pull request
+
 
 
 ### P.S.
